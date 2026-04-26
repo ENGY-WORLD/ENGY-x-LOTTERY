@@ -542,7 +542,7 @@ async def cmd_cmd(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "/info — Algorithm info\n"
         "/status — Your License expiry\n"
         "/license - See License Price\n"
-        "/cmd — This list\n",
+        "/cmd — This list\n"
     )
     admin_part = (
         "\n *𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦*\n"
@@ -588,7 +588,7 @@ async def cmd_info(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "🟡 MEDIUM 55–65% — bet small\n"
         "🔴 SKIP <55% — no bet this round\n\n"
         "Expected accuracy: 70-80%\n"
-        "_ALWAYS USE OWN MIND AND OUR STATICS TO WIN_",
+        "ALWAYS USE OWN MIND AND OUR STATICS TO WIN",
         parse_mode="Markdown",
     )
 
@@ -601,7 +601,7 @@ async def cmd_license(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "• 1 YEAR - ₹15,999\n"
         "\n\n"
         "UPI OR CRYPTOCURRENCY BOTH AVAILABLE \n"
-        "NOTE : TIMEWASTER AND TRIAL USERS DON'T MSG ME"
+        "NOTE : TIMEWASTER AND TRIAL USERS DON'T MSG ME",
         parse_mode="Markdown",
     )
 
