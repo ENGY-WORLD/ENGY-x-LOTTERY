@@ -34,8 +34,8 @@ if not MONGO_URI: raise RuntimeError("MONGO_URI missing in .env")
 ADMIN_IDS = {1827864928}
 
 # ── CHANNEL / OWNER LINKS ─────────────────────────────────────────────────────
-CHANNEL_URL  = "https://t.me/ENGY_x_CHANNEL"
-OWNER_URL    = "https://t.me/ENGY_x_TG"
+CHANNEL_URL  = "https://t.me/ENGYxCHANNEL"
+OWNER_URL    = "https://t.me/ENGYxTG"
 CHANNEL_NAME = "𝗝 𝗢 𝗜 𝗡   𝗖 𝗛 𝗔 𝗡 𝗡 𝗘 𝗟"
 OWNER_NAME   = "𝗢  𝗪  𝗡  𝗘  𝗥"
 
@@ -535,16 +535,17 @@ async def cmd_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 async def cmd_cmd(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     uid = update.effective_user.id
     user_part = (
-        "👤 *USER COMMANDS*\n"
+        " *𝗨𝗦𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦*\n"
         "/start — Welcome screen\n"
         "/history — Last 10 results\n"
         "/stats — Win rate this session\n"
         "/info — Algorithm info\n"
         "/status — Your License expiry\n"
-        "/cmd — This list\n"
+        "/license - See License Price\n"
+        "/cmd — This list\n",
     )
     admin_part = (
-        "\n👑 *OWNER COMMANDS*\n"
+        "\n *𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦*\n"
         "/approve `<id> <days> [name]` — Grant access\n"
         "/revoke `<id>` — Remove access\n"
         "/users — List approved users\n"
@@ -593,12 +594,14 @@ async def cmd_info(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
 async def cmd_license(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "🤖 *PREDICTION BOT LICENSE*\n\n"
-        "Layers:\n"
-        "•1 DAY - ₹99 \n"
-        "•1 WEEK - ₹399\n"
-        "•1 MONTH - ₹1,599\n"
-        "•1 YEAR - ₹15,999\n"
+        " *PREDICTION BOT LICENSE*\n\n"
+        "• 1 DAY - ₹99 \n"
+        "• 1 WEEK - ₹399\n"
+        "• 1 MONTH - ₹1,599\n"
+        "• 1 YEAR - ₹15,999\n"
+        "\n\n"
+        "UPI OR CRYPTOCURRENCY BOTH AVAILABLE \n"
+        "NOTE : TIMEWASTER AND TRIAL USERS DON'T MSG ME"
         parse_mode="Markdown",
     )
 
@@ -755,7 +758,7 @@ async def on_cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
             return
         auto_set.add(uid)
         await q.message.reply_text(
-            "🟢 *AUTO ON*\n\n"
+            "🟢 *AUTO PREDICTION ON*\n\n"
             "You will receive predictions automatically.\n\n"
             "🟢 HIGH — bet\n"
             "🟡 MEDIUM — bet small\n"
@@ -767,7 +770,7 @@ async def on_cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     elif data == "stop_auto":
         auto_set.discard(uid)
         await q.message.reply_text(
-            "🔴 *AUTO STOPPED*\n\nPress Start Auto to resume.",
+            "🔴 *AUTO PREDICTION STOPPED*\n\nPress Start Auto to resume.",
             parse_mode="Markdown",
             reply_markup=kb_stopped(),
         )
